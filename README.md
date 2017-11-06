@@ -1,3 +1,21 @@
 # CrackMe
 
-  - [CrackMe 1](https://github.com/vladpereskokov/Technopark_InfoSec-Cracks/tree/master/CrackMe_1)  
+## Задания
+
+  - [CrackMe 1](/CrackMe_1)  
+  - [CrackMe 2](/CrackMe_2)  
+
+## Используемые инструменты
+
+  - IDA Pro
+  - Olly
+  - Листок + ручка
+  - Python 3
+  
+## Структура 
+
+В каждой папке:  
+  - Оригинальный exe файл
+  - *Crack* версия, которая при любых введенных данных говорит, что эти данные **верны**  
+  - Присутствует файл keygen.py, который генерирует верный *code* под ваш *username*  
+  - Описание алгоритма и скрин функции генерации (из *Olly*) лежат там же.  
