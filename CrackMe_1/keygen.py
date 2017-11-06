@@ -7,7 +7,7 @@ def gen_serial(username):
 	middle = 'm'
 
 	for c in username:
-		tmp = int(hex(ord(c)), 16) ^ ltm if c <= middle else mtm
+		tmp = int(hex(ord(c)), 16) ^ (ltm if c <= middle else mtm)
 		tmp = tmp + solt
 		hash = hash + tmp - 0xff - 1
 
