@@ -1,10 +1,3 @@
-def sar_8(a, width):
-    sign = a & 0x80
-    a &= 0x7F
-    a >>= width
-    a |= sign
-    return a
-
 def gen_serial(username):
 	log_10 = 0
 	log_14 = 0
@@ -18,7 +11,6 @@ def gen_serial(username):
 		eax = hex_symbol
 		eax = log_15
 		eax = eax << 2
-		print('eax_shl: ', hex(eax))
 		log_10 = log_10 + eax
 		eax = hex_symbol
 		edx = log_10
@@ -37,8 +29,6 @@ def gen_serial(username):
 		log_10 = eax
 		log_15 = int(hex_symbol, 16)
 
-	print('eax: ', eax)
-	print('edx: ', hex(edx))
 	eax = log_14
 	eax = eax >> 0x1f
 	edx = eax
