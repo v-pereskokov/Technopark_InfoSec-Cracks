@@ -16,4 +16,4 @@
 
 Ниже представлен алгоритм работы программы при **username**: **a1**.  
 
-![disasm](https://github.com/vladpereskokov/Technopark_InfoSec-Cracks/tree/master/CrackMe_1/disasm.png)
+![disasm](/CrackMe_1/disasm.png)
