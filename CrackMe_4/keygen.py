@@ -10,33 +10,34 @@ def gen_serial(username):
 
 	for c in username:
 		hex_symbol = hex(ord(c))
+		eax = int(hex_symbol, 16)
 		eax = log_15
 		eax = eax + eax
-		log_10 = eax
-		edx = hex_symbol
-		eax = log_10
-		edx = int(edx, 16) + eax
+		log_10 = log_10 + eax
+		edx = int(hex_symbol, 16)
+		eax = (log_10 if log_10 < 255 else log_10 - 0xff - 1)
+		edx = edx + eax
 		eax = log_16
 		eax = eax ^ edx
 		log_10 = eax
 		eax = log_15
-		eax = eax >> 0x4
+		eax = eax << 0x4
 		log_14 = log_14 + eax
-		eax = hex_symbol
+		eax = int(hex_symbol, 16)
 		edx = log_14
-		edx = edx - int(eax, 16)
+		edx = edx - eax + (0xff + 1 if eax > edx else 0)
 		eax = log_17
 		eax = eax ^ edx
 		log_10 = eax
-		eax = hex_symbol
+		log_15 = int(hex_symbol, 16)
 
 	eax = log_14
-	eax = eax << 0x1f
+	eax = eax >> 0x1f
 	edx = eax
 	edx = edx ^ log_14
 	edx = edx - eax
 	eax = log_10
-	eax = eax << 0x1f
+	eax = eax >> 0x1f
 	ecx = eax
 	eax = ecx
 	eax = eax ^ log_10
