@@ -15,7 +15,7 @@ def gen_serial(username):
 		eax = eax + eax
 		log_10 = log_10 + eax
 		edx = int(hex_symbol, 16)
-		eax = (log_10 if log_10 < 255 else log_10 - 0xff - 1)
+		eax = log_10
 		edx = edx + eax
 		eax = log_16
 		eax = eax ^ edx
