@@ -6,6 +6,8 @@
   - [CrackMe 2](/CrackMe_2)  
   - [CrackMe 3](/CrackMe_3)  
   - [CrackMe 4](/CrackMe_4)  
+  - [CrackMe 5](/CrackMe_5)  
+  - [CrackMe 6](/CrackMe_6)  
 
 ## Используемые инструменты
 
