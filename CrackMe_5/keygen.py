@@ -1,15 +1,14 @@
 def gen_serial(username):
-	hash = 0x455FAD
-	magic = 0x2A47D56
-	solt = 1
+	hash = 0x0e8e804
+	magic = 0x050cfced
 	ltm = 0x13 # less then 'm'
-	mtm = 0x88 # more or equals then 'm'
+	mtm = 0x18 # more or equals then 'm'
 	middle = 'm'
 
 	for c in username:
 		tmp = int(hex(ord(c)), 16) ^ (ltm if c <= middle else mtm)
-		tmp = tmp + solt
-		tmp = (tmp if c <= middle else tmp - 0xff - 1)
+		tmp = tmp + (0x58 if c <= middle else -0x4d)
+		tmp = (tmp - 0xff - 1 if tmp >= 0xa0 else tmp)
 		hash = hash + tmp
 
 	return magic ^ hash
